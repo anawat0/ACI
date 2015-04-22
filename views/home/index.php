@@ -21,10 +21,10 @@
 				<div class="col-md-4">
 					<img src="<?= Url::to('@web/images/aec-logo.png') ?>">
 				</div>
-				<div class="col-md-7">
+				<div class="col-md-8">
 					<div class="search-contianer pull-left">
 						<div class="row">
-							<div class="col-md-10">
+							<div class="col-md-12">
 								<form>
 									<div class="input-group">
 										<input type="text" class="form-control" placeholder="Search for...">
