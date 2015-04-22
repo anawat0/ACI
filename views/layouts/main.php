@@ -25,7 +25,7 @@ if (!Authentication::isLoggedIn()) {
     <title>E-Warning System</title>
     <?php $this->head() ?>
 </head>
-<body>
+<body class="container-content">
 
 <?php 
 	$nosuuportbrowser = '<div style="-webkit-border-radius: 5px;border-radius: 5px;  margin: 0 15px;border: 1px solid red;background-color: linen;padding: 20px;">Browser version นี้ไม่สามารถใช้งานได้ กรุณาใช้ Browser ที่รองรับ HTML5 หรือดาวน์โหลดได้ที่นี่ <a href="https://www.google.com/chrome/browser/desktop/index.html?system=true&standalone=1">คลิก</a></div>';
@@ -37,7 +37,6 @@ if (!Authentication::isLoggedIn()) {
 <noscript>
 	<div style="-webkit-border-radius: 5px;border-radius: 5px;  margin: 0 15px;border: 1px solid red;background-color: linen;padding: 20px;">ไม่ Support Javascript กรุณาเปิดการใช้งาน Javascript!!! <!-- <br />กรุณาใช้ Browser อื่น<br />ดาวน์โหลดได้ที่ <a href="https://www.google.com/chrome/browser/desktop/index.html?system=true&standalone=1">คลิก</a> --></div>
 </noscript>
-
 <?php echo $content; ?>
 <?php $this->endBody() ?>
 </body>
