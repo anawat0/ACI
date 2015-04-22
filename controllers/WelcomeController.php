@@ -50,7 +50,7 @@ class WelcomeController extends AppController
     }
     public function actionGridview()
     {
-    	$request = Yii::$app->request; //Test
+    	$request = Yii::$app->request; //Test55555
 
 		//Parameter from jqGrid
 		$oper = $request->post('oper', ''); $oper = (empty($oper)?$request->get('oper', ''):$oper);
