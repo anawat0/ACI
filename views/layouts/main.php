@@ -8,6 +8,8 @@ use app\assets\AppAsset;
 use app\models\WA_GROUP_USER;
 use himiklab\jqgrid\JqGridWidget;
 use yii\web\Authentication;
+use kartik\growl\Growl;
+
 $this->beginPage();
 AppAsset::register($this);
 
@@ -26,6 +28,28 @@ if (!Authentication::isLoggedIn()) {
     <?php $this->head() ?>
 </head>
 <body class="container-content">
+
+<?php
+	//Get all flash messages and loop through them
+	foreach (Yii::$app->session->getAllFlashes() as $message) {
+		echo Growl::widget([
+			'type' => (!empty($message['type'])) ? $message['type'] : 'danger',
+			// 'title' => (!empty($message['title'])) ? Html::encode($message['title']) : 'Title Not Set!',
+			// 'icon' => (!empty($message['icon'])) ? $message['icon'] : 'fa fa-info',
+			'body' => (!empty($message['message'])) ? Html::encode($message['message']) : 'Message Not Set!',
+			'showSeparator' => true,
+			'delay' => 500, //This delay is how long before the message shows
+			'pluginOptions' => [
+				'showProgressbar' => true,
+				'delay' => (!empty($message['duration'])) ? $message['duration'] : 3000, //This delay is how long the message shows for
+				'placement' => [
+					'from' => (!empty($message['positonY'])) ? $message['positonY'] : 'top',
+					'align' => (!empty($message['positonX'])) ? $message['positonX'] : 'right',
+				]
+			]
+		]);
+    }
+?>
 
 <?php 
 	$nosuuportbrowser = '<div style="-webkit-border-radius: 5px;border-radius: 5px;  margin: 0 15px;border: 1px solid red;background-color: linen;padding: 20px;">Browser version นี้ไม่สามารถใช้งานได้ กรุณาใช้ Browser ที่รองรับ HTML5 หรือดาวน์โหลดได้ที่นี่ <a href="https://www.google.com/chrome/browser/desktop/index.html?system=true&standalone=1">คลิก</a></div>';

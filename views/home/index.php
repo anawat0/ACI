@@ -1,5 +1,11 @@
 <?php
+	use yii\BaseYii;
 	use yii\helpers\Url;
+	use vendor\MPDF57\mpdf;
+
+	$mpdf = new mPDF(); 
+	// Yii::import('application.vendor.*');
+	// require_once('Zend/Feed.php');
 ?>
 <!-- --------------------------------------------------------------------------- -->
 <div class="container">
